@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    osmlib-base (0.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  osmlib-base
