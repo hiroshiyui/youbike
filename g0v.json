@@ -2,6 +2,7 @@
   "author": "hiroshiyui",
   "status": "beta",
   "name": "youbike",
+  "name_zh": "YouBike 租賃站資料 JOSM 格式轉換程式",
   "description": "YouBike rental stations data to JOSM XML file format converter",
   "description_zh": "臺北市公共自行車「YouBike 微笑單車」租賃站資料轉換 JOSM 格式",
   "homepage": "https://github.com/hiroshiyui/youbike",
