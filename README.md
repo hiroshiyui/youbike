@@ -5,3 +5,8 @@
 ## 使用方法
 
 本程式遵循一般常見 Ruby 程式的部署方法，使用 Bundler 與 Gemfile 自動安裝必要元件。執行 <code>youbike.rb</code> 後，若過程無誤，則會在同樣位置產生 <code>youbike-export-$timestamp.osm</code>, <code>youbike-export-$timestamp.json</code>, <code>youbike-export-$timestamp.csv</code> 檔案。
+
+## 參考資料
+
+* [臺北市公共自行車租借站及價格資料](http://data.taipei.gov.tw/opendata/apply/NewDataContent?oid=7114B2ED-D8E5-49FD-81F9-F479806DB635#)
+* [Tag:amenity=bicycle_rental - OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental)
