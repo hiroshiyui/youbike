@@ -4,4 +4,4 @@
 
 ## 使用方法
 
-本程式遵循一般常見 Ruby 程式的部署方法，使用 Bundler 與 Gemfile 自動安裝必要元件。執行 <code>youbike.rb</code> 後，若過程無誤，則會在同樣位置產生 <code>youbike-export-<timestamp>.osm</code>, <code>youbike-export-<timestamp>.json</code>, <code>youbike-export-<timestamp>.csv</code> 檔案。
+本程式遵循一般常見 Ruby 程式的部署方法，使用 Bundler 與 Gemfile 自動安裝必要元件。執行 <code>youbike.rb</code> 後，若過程無誤，則會在同樣位置產生 <code>youbike-export-$timestamp.osm</code>, <code>youbike-export-$timestamp.json</code>, <code>youbike-export-$timestamp.csv</code> 檔案。
