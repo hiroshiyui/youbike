@@ -40,8 +40,10 @@ class Nodes
   end
 
   def save
-    @format = 'osm' unless FORMATS.include?(@options[:format])
+    @format = FORMATS.include?(@options[:format]) ? @options[:format] : "osm"
     @output = (@options[:output].nil?) ? "youbike-#{Time.now.to_i}.#{@format}" : @options[:output]
+
+    puts "Saving '#{@output}' ..."
 
     case @format
       when 'osm'
