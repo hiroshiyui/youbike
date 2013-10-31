@@ -1,10 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    osmlib-base (0.1.4)
+    mini_portile (0.5.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    slop (3.4.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  osmlib-base
+  nokogiri
+  slop

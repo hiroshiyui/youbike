@@ -1,4 +1,4 @@
 demo/
-youbike-export-*.osm
-youbike-export-*.json
-youbike-export-*.csv
+*.osm
+*.json
+*.csv
