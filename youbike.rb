@@ -33,10 +33,9 @@ class Nodes
 
   def initialize(mode, opts)
     @options = opts
-    @mode = mode
     @youbike_nodes = Array.new
-    load_http if @mode == 'get'
-    load_file if @mode == 'convert'
+    load_http if mode == 'get'
+    load_file if mode == 'convert'
   end
 
   def save
