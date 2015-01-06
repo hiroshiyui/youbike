@@ -13,4 +13,5 @@
 ## 參考資料
 
 * [臺北市公共自行車租借站及價格資料](http://data.taipei.gov.tw/opendata/apply/NewDataContent?oid=7114B2ED-D8E5-49FD-81F9-F479806DB635#)
+* [臺北市即時交通資訊資料庫免申請網址](http://www.dot.taipei.gov.tw/public/mmo/dot/%E8%87%BA%E5%8C%97%E5%B8%82%E5%8D%B3%E6%99%82%E4%BA%A4%E9%80%9A%E8%B3%87%E8%A8%8A%E8%B3%87%E6%96%99%E5%BA%AB%E5%85%8D%E7%94%B3%E8%AB%8B%E7%B6%B2%E5%9D%80.pdf)
 * [Tag:amenity=bicycle_rental - OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental)
