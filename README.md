@@ -14,15 +14,16 @@
 
 * [臺北市公共自行車租借站及價格資料](http://data.taipei.gov.tw/opendata/apply/NewDataContent?oid=7114B2ED-D8E5-49FD-81F9-F479806DB635#)
 * [臺北市即時交通資訊資料庫免申請網址](http://www.dot.taipei.gov.tw/public/mmo/dot/%E8%87%BA%E5%8C%97%E5%B8%82%E5%8D%B3%E6%99%82%E4%BA%A4%E9%80%9A%E8%B3%87%E8%A8%8A%E8%B3%87%E6%96%99%E5%BA%AB%E5%85%8D%E7%94%B3%E8%AB%8B%E7%B6%B2%E5%9D%80.pdf)
+* [YouBike 微笑單車介接說明文件](http://www.dot.taipei.gov.tw/public/mmo/dot/YouBike%E5%BE%AE%E7%AC%91%E5%96%AE%E8%BB%8A%E4%BB%8B%E6%8E%A5%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6.pdf)
 * [Tag:amenity=bicycle_rental - OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental)
 
 ## 運用 Overpass API 取得臺灣的 OpenStreetMap 公共自行車租賃點資料
 
 運用 [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) 取得臺灣的 OpenStreetMap 公共自行車租賃點資料：
 
-        <bbox-query s="21.53" n="25.18" w="120.01" e="121.59"/>
-        <query type="node">
-          <item/>
-          <has-kv k="amenity" v="bicycle_rental"/>
-        </query>
-        <print/>
+    <bbox-query s="21.53" n="25.18" w="120.01" e="121.59"/>
+    <query type="node">
+      <item/>
+      <has-kv k="amenity" v="bicycle_rental"/>
+    </query>
+    <print/>
