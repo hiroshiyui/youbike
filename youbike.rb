@@ -28,7 +28,7 @@ require 'slop'
 require 'pp'
 
 class Nodes
-  COLUMNS = [:sno, :sna, :tot, :sbi, :sarea, :lat, :lng, :ar, :sareaen, :snaen, :aren]
+  COLUMNS = [:iid, :sv, :sd, :vtyp, :sno, :sna, :sip, :tot, :sbi, :sarea, :mday, :lat, :lng, :ar, :sareaen, :snaen, :aren, :nbcnt, :bemp, :act]
   FORMATS = ['osm', 'json', 'csv']
 
   def initialize(mode, opts)
@@ -55,7 +55,7 @@ class Nodes
   end
 
   def to_csv
-    CSV.open(@output, "wb") do |csv|
+    CSV.open(@output, "wb", {:force_quotes => true}) do |csv|
       csv << COLUMNS
       @youbike_nodes.each do |node|
         csv << node.values
@@ -73,13 +73,13 @@ class Nodes
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.osm(:version => '0.6') {
         @youbike_nodes.each_with_index do |node, index|
-          xml.node(:id => -index - 1, :visible => 'true', :lat => node[:lat], :lon => node[:lng]) {
+          xml.node(:id => -index - 1, :visible => 'true', :lat => node['lat'], :lon => node['lng']) {
             xml.tag(:k => 'amenity', :v => 'bicycle_rental')
-            xml.tag(:k => 'name', :v => "#{node[:sna]} #{node[:snaen]}")
-            xml.tag(:k => 'name:en', :v => node[:snaen])
-            xml.tag(:k => 'name:zh', :v => node[:sna])
-            xml.tag(:k => 'ref', :v => node[:sno])
-            xml.tag(:k => 'capacity', :v => node[:tot])
+            xml.tag(:k => 'name', :v => "#{node['sna']} #{node['snaen']}")
+            xml.tag(:k => 'name:en', :v => node['snaen'])
+            xml.tag(:k => 'name:zh', :v => node['sna'])
+            xml.tag(:k => 'ref', :v => node['sno'])
+            xml.tag(:k => 'capacity', :v => node['tot'])
             xml.tag(:k => 'network', :v => 'YouBike 微笑單車')
             xml.tag(:k => 'network:en', :v => 'YouBike')
             xml.tag(:k => 'network:zh', :v => '微笑單車')
@@ -98,10 +98,8 @@ class Nodes
 
   private
   def load_http
-    @youbike_data = Net::HTTP.get(URI.parse("http://its.taipei.gov.tw/atis_index/aspx/Youbike.aspx?Mode=1"))
-    @youbike_data.force_encoding("UTF-8").split("|").sort.each do |node|
-      @youbike_nodes << Hash[COLUMNS.zip node.split("_")]
-    end
+    @youbike_data = Net::HTTP.get(URI.parse("http://opendata.dot.taipei.gov.tw/opendata/gwjs_cityhall.json"))
+    @youbike_nodes = JSON.parse(@youbike_data)['retVal']
   end
 
   def load_file
@@ -113,11 +111,18 @@ class Nodes
     case File.extname(@input)
       when '.osm'
         Nokogiri::XML(File.open(@input).read).xpath('//node').each do |node|
-          # mapping fields :sno, :sna, :tot, :sbi, :sarea, :lat, :lng, :ar, :sareaen, :snaen, :aren
+          # mapping fields
+          # :iid, :sv, :sd, :vtyp, :sno, :sna, :sip, :tot, :sbi, :sarea, :mday, :lat, :lng, :ar, :sareaen, :snaen, :aren, :nbcnt, :bemp, :act
           @youbike_nodes << Hash[ COLUMNS.zip [
+            nil,
+            nil,
+            nil,
+            nil,
             node.xpath("tag[@k='ref']").attr('v').to_s,
             node.xpath("tag[@k='name:zh']").attr('v').to_s,
+            nil,
             node.xpath("tag[@k='capacity']").attr('v').to_s,
+            nil,
             nil,
             nil,
             node['lat'],
@@ -125,6 +130,9 @@ class Nodes
             nil,
             nil,
             node.xpath("tag[@k='name:en']").attr('v').to_s,
+            nil,
+            nil,
+            nil,
             nil] ]
         end
       when '.json'
