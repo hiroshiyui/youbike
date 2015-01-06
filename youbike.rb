@@ -83,9 +83,6 @@ class Nodes
             xml.tag(:k => 'network', :v => 'YouBike 微笑單車')
             xml.tag(:k => 'network:en', :v => 'YouBike')
             xml.tag(:k => 'network:zh', :v => '微笑單車')
-            xml.tag(:k => 'operator', :v => '臺北市政府 Taipei City Government')
-            xml.tag(:k => 'operator:en', :v => 'Taipei City Government')
-            xml.tag(:k => 'operator:zh', :v => '臺北市政府')
           }
         end
       }
