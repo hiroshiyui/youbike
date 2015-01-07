@@ -17,9 +17,9 @@
 * [YouBike 微笑單車介接說明文件](http://www.dot.taipei.gov.tw/public/mmo/dot/YouBike%E5%BE%AE%E7%AC%91%E5%96%AE%E8%BB%8A%E4%BB%8B%E6%8E%A5%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6.pdf)
 * [Tag:amenity=bicycle_rental - OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental)
 
-## 運用 Overpass API 取得臺灣的 OpenStreetMap 公共自行車租賃點資料
+## 運用 Overpass API 取得臺灣的 OpenStreetMap 自行車租賃點資料
 
-運用 [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) 取得臺灣的 OpenStreetMap 公共自行車租賃點資料：
+運用 [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) 取得臺灣的 OpenStreetMap 自行車租賃點資料：
 
     <bbox-query s="21.53" n="25.18" w="120.01" e="121.59"/>
     <query type="node">
