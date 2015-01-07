@@ -21,9 +21,11 @@
 
 運用 [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) 取得臺灣的 OpenStreetMap 自行車租賃點資料：
 
-    <bbox-query s="21.53" n="25.18" w="120.01" e="121.59"/>
-    <query type="node">
-      <item/>
-      <has-kv k="amenity" v="bicycle_rental"/>
-    </query>
-    <print/>
+```xml
+<bbox-query s="21.53" n="25.18" w="120.01" e="121.59"/>
+<query type="node">
+  <item/>
+  <has-kv k="amenity" v="bicycle_rental"/>
+</query>
+<print/>
+```
