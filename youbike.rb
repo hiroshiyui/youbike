@@ -75,7 +75,7 @@ class Nodes
         @youbike_nodes.each_with_index do |node, index|
           xml.node(:id => -index - 1, :visible => 'true', :lat => node['lat'], :lon => node['lng']) {
             xml.tag(:k => 'amenity', :v => 'bicycle_rental')
-            xml.tag(:k => 'name', :v => "#{node['sna']} #{node['snaen']}")
+            xml.tag(:k => 'name', :v => node['sna'])
             xml.tag(:k => 'name:en', :v => node['snaen'])
             xml.tag(:k => 'name:zh', :v => node['sna'])
             xml.tag(:k => 'ref', :v => node['sno'])
